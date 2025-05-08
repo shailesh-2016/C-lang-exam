@@ -1,32 +1,40 @@
+
+
 #include<stdio.h>
+
+
 int main(){
-    int value1,value2;
-    int operator;
+    int val1,val2;
+    char operator;
 
-    printf("enter value1 : ");
-    scanf("%d",&value1)
-    printf("enter value2 : ");
-    scanf("%d",&value2)
+    printf("Enter the value of val1: ");
+    scanf("%d",&val1);
+    printf("Enter the value of val2: ");
+    scanf("%d",&val2);
 
-    printf("enter any operator +,-,%,/ : ");
-    scanf("%d",&operator);
 
-    switch(operator){
-        case "+":
-            printf("%d + %d : "value1,value2,value1 + value2);
-            break; 
-        case "-":
-            printf("%d - %d : "value1,value2,value1 - value2);
-            break; 
-        case "%":
-            printf("%d % %d : "value1,value2,value1 % value2);
-            break; 
-        case "/":
-            printf("%d / %d : "value1,value2,value1 / value2);
-            break; 
-        
+    printf("enter the operator you want to perform (+, -, *, /): ");
+    scanf(" %c",&operator);
+
+    switch (operator)
+    {
+    case '+':
+        printf("%d + %d = %d\n", val1, val2, val1 + val2);
+        break;
+
+        case '-':
+        printf("%d - %d = %d\n", val1, val2, val1 - val2);
+        break;
+
+        case '*':
+        printf("%d * %d = %d\n", val1, val2, val1 * val2);
+        break;
+        case '/':
+        printf("%d / %d = %d\n", val1, val2, val1 / val2);
+        break;
+    
+    default:
+    printf("enter valid operator\n");
+        break;
     }
-
-
-
 }
