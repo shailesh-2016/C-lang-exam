@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+#define MAX 100
+#define employee 3
+
+int main() {
+    FILE *fp;
+    char name[MAX], role[MAX];
+
+    fp = fopen("data.txt", "w");
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    printf("Enter details for %d employees:\n", employee);
+
+    for (int i = 0; i < employee; i++) {
+        printf("\nEmployee %d:\n", i + 1);
+
+        printf("Enter name: ");
+        fgets(name, MAX, stdin);
+
+        printf("Enter role: ");
+        fgets(role, MAX, stdin);
+
+        fprintf(fp, "Employee %d: Name: %srole: %s\n", i + 1, name, role);
+    }
+
+    fclose(fp);
+    printf("\nEmployee data has been written to data.txt\n");
+
+    return 0;
+}
